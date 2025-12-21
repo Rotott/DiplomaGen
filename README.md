@@ -17,7 +17,7 @@ It inserts an image, adds a title, fills in static text, and leaves blank spaces
 - Maven
 - Apache POI (`poi-ooxml` dependency included in `pom.xml`)
 - A PNG image located at:  
-  `src/main/java/org/example/onion.png`
+  `src/main/java/org/example/`
 
 ## How It Works
 The generator:
