@@ -1,28 +1,24 @@
 package org.example.diploma.ui.desktop;
 
-import org.example.diploma.core.*;
+import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
 
-import java.io.InputStream;
-import java.nio.file.Path;
+public class DesktopApp extends Application {
 
-public class DesktopApp {
+    @Override
+    public void start(Stage stage) throws Exception {
+        FXMLLoader loader = new FXMLLoader(
+                DesktopApp.class.getResource("/fxml/diploma-view.fxml")
+        );
+        Scene scene = new Scene(loader.load());
+        stage.setTitle("Diploma Generator");
+        stage.setScene(scene);
+        stage.show();
+    }
 
     public static void main(String[] args) {
-        DiplomaData data = new DiplomaData(
-                "DIPLOM",
-                "LÖKEN",
-                "TILLDELAT",
-                "___________FirstName________LastName_________",
-                "TID        ______________________        DATUM        ______________________"
-        );
-
-        DiplomaService service = new DiplomaService();
-
-        try (InputStream image = DesktopApp.class.getClassLoader().getResourceAsStream("images/onion.png")) {
-            service.createDiploma(data, image, Path.of("Diploma.docx"));
-            System.out.println("Diploma.docx created successfully, refactored");
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        launch(args);
     }
 }

@@ -34,4 +34,4 @@ build/
 ### Mac OS ###
 .DS_Store
 
-Diploma.docx
+*.docx

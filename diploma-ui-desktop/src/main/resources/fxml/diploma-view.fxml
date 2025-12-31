@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.geometry.Insets?>
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="org.example.diploma.ui.desktop.DiplomaFxController"
+      spacing="10"
+>
+    <padding>
+        <Insets top="20" right="20" bottom="20" left="20"/>
+    </padding>
+
+    <Label text="Diploma Generator"
+           style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
+
+    <GridPane hgap="10" vgap="10">
+        <columnConstraints>
+            <ColumnConstraints minWidth="120"/>
+            <ColumnConstraints hgrow="ALWAYS"/>
+        </columnConstraints>
+
+        <Label text="Title:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+        <TextField fx:id="titleField" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+        <Label text="Subtitle:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+        <TextField fx:id="subtitleField" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+        <Label text="Award Text:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+        <TextField fx:id="awardTextField" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+
+        <Label text="Recipient:" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+        <TextField fx:id="recipientField" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+
+        <Label text="Details:" GridPane.rowIndex="4" GridPane.columnIndex="0"/>
+        <TextField fx:id="detailsField" GridPane.rowIndex="4" GridPane.columnIndex="1"/>
+    </GridPane>
+
+    <HBox spacing="10">
+        <Button text="Choose PNG Image"
+                onAction="#onChooseImage"/>
+        <Label fx:id="imageLabel" text="No image selected"/>
+    </HBox>
+
+    <Separator/>
+
+    <Button text="Generate Diploma"
+            onAction="#onGenerateDiploma"
+            maxWidth="Infinity"/>
+
+</VBox>

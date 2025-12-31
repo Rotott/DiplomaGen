@@ -14,11 +14,10 @@ public class DiplomaService {
             DiplomaData data,
             InputStream image,
             Path outputFile
-            ) throws Exception {
+    ) throws Exception {
 
         try (XWPFDocument doc = generator.generate(data, image);
              FileOutputStream out = new FileOutputStream(outputFile.toFile())) {
-
             doc.write(out);
         }
     }

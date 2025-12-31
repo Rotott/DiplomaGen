@@ -20,7 +20,7 @@ public class DiplomaGenerator {
         return document;
     }
 
-    private void addImage(XWPFDocument document, InputStream imageStream) throws Exception {
+    protected void addImage(XWPFDocument document, InputStream imageStream) throws Exception {
         XWPFParagraph paragraph = document.createParagraph();
         paragraph.setAlignment(ParagraphAlignment.CENTER);
         XWPFRun run = paragraph.createRun();
@@ -33,7 +33,7 @@ public class DiplomaGenerator {
         );
     }
 
-    private void addCenteredText(XWPFDocument doc, String text, int size, boolean bold) {
+    protected void addCenteredText(XWPFDocument doc, String text, int size, boolean bold) {
         XWPFParagraph p = doc.createParagraph();
         p.setAlignment(ParagraphAlignment.CENTER);
         XWPFRun run = p.createRun();
@@ -42,7 +42,7 @@ public class DiplomaGenerator {
         run.setBold(bold);
     }
 
-    private void addRecipient(XWPFDocument doc, String text) {
+    protected void addRecipient(XWPFDocument doc, String text) {
         XWPFParagraph p = doc.createParagraph();
         p.setAlignment(ParagraphAlignment.CENTER);
         XWPFRun run = p.createRun();
@@ -51,7 +51,7 @@ public class DiplomaGenerator {
         run.setText(text);
     }
 
-    private void addDetails(XWPFDocument doc, String text) {
+    protected void addDetails(XWPFDocument doc, String text) {
         XWPFParagraph p = doc.createParagraph();
         p.setAlignment(ParagraphAlignment.CENTER);
         XWPFRun run = p.createRun();
