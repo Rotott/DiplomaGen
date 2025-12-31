@@ -21,7 +21,7 @@ public class DiplomaGenerator {
             XWPFParagraph imageParagraph = document.createParagraph();
             imageParagraph.setAlignment(ParagraphAlignment.CENTER);
             XWPFRun imageRun = imageParagraph.createRun();
-            try (InputStream is = Files.newInputStream(Paths.get("src/main/java/org/example/onion.png"))) {
+            try (InputStream is = Files.newInputStream(Paths.get("src/main/java/org/example/images/onion.png"))) {
                 imageRun.addPicture(is, XWPFDocument.PICTURE_TYPE_PNG, "onion.png", Units.toEMU(275), Units.toEMU(183));
             } catch (Exception e) {
                 e.printStackTrace();
